@@ -1,0 +1,27 @@
+:root{
+  --white: #F2F2F2;
+  --gray: #D9D9D9;
+  --dark-gray: #A4A6A6;
+  --red: #CF0210;
+  --black: #0F0F0F;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+button{
+  outline: none;
+  border: none;
+  appearance: none;
+  background: none;
+  cursor: pointer;
+}
+input[type=text]{
+  border: none;
+  outline: none;
+  background: none;
+  appearance: none;
+}
