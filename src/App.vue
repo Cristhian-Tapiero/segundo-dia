@@ -1,6 +1,6 @@
 <script setup>
-import playerSearch from './views/player-search.vue';
+import teamSearch from './views/team-search.vue';
 </script>
 <template>
-    <playerSearch />
+    <teamSearch />
 </template>

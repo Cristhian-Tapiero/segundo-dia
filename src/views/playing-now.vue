@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from 'vue';
+
 import playCardVue from '../components/play-card.vue';
+
 let matches = ref([])
+
 const url = 'https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all';
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -10,11 +14,18 @@ const options = {
 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
 	}
 };
-fetch(url, options).then(res => res.json()).then((data) =>{
-    console.log(data.response);
+
+fetch(url, options)
+.then(res => res.json())
+.then((data) =>{
+
     mapArray(data.response, matches)
-}).then(console.log(matches.value)).catch(err => console.log(err))
+
+})
+.catch(err => console.log(err))
+
 const mapArray = (data, arr) =>{
+
     data.forEach(play=>{
         arr.value.push({
             league: play.league, 
@@ -24,7 +35,9 @@ const mapArray = (data, arr) =>{
         })
     })
 }
+
 </script>
+
 <template>
     <div class="match-playing-container">
         <div class="grid-container">

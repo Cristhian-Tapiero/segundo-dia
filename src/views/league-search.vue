@@ -1,22 +1,25 @@
 <script setup>
 import { ref } from 'vue'
+
 let leagues = ref([])
+
 const url = `https://api-football-v1.p.rapidapi.com/v3/leagues?id=39`;
+
 const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'ffb077ba4amshff7bea3c8800c8cp143f7bjsnb8a18823bb93',
 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
 	}
-};
+}
+
 fetch(url, options)
 .then(res => res.json())
 .then(data => {
-    console.log(data.response);
     mapData(data.response, leagues)
-    console.log(data.response.logo);
 })
 .catch(err => console.log('Error de tipo: ' + err))
+
 const mapData = (data, arr) =>{
     data.forEach(league => {
         arr.value.push({
@@ -28,6 +31,7 @@ const mapData = (data, arr) =>{
     })
 }
 </script>
+
 <template>
     <div class="leagues-container">
         <div class="league-info" v-for="league in leagues">

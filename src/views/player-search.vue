@@ -1,5 +1,4 @@
 <script setup>
-
 import { ref } from 'vue';
 
 import playerCard from '../components/player-card.vue';
@@ -27,12 +26,12 @@ const mapData = (data, arr) =>{
 fetch(url, options)
 .then(res => res.json())
 .then(data =>{
-	console.log(data.response);
 	mapData(data.response, players)
 })
 .catch(err => console.log('Error de tipo ' + err))
 
 </script>
+
 <template>
 	<div class="players-results-container">
 		<playerCard v-for="player in players" :player_info="player"/>
